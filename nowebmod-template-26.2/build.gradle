@@ -27,7 +27,7 @@ loom {
 processResources {
 	inputs.property "version", "1.0.0"
 	filesMatching("fabric.mod.json") {
-		expand "version", "1.0.0"
+		expand([version: "1.0.0"])
 	}
 }
 
