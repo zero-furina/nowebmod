@@ -20,8 +20,15 @@ public class NowebmodClient implements ClientModInitializer {
             if (mc.player.isSpectator() || mc.player.getAbilities().flying) return;
             if (!isInsideCobweb()) return;
 
-            float forward = mc.player.input.forwardImpulse;
-            float strafe = mc.player.input.leftImpulse;
+            // Читаем нажатия клавиш напрямую (100% рабочий метод)
+            float forward = 0.0f;
+            if (mc.options.keyUp.isDown()) forward += 1.0f;
+            if (mc.options.keyDown.isDown()) forward -= 1.0f;
+
+            float strafe = 0.0f;
+            if (mc.options.keyLeft.isDown()) strafe += 1.0f;
+            if (mc.options.keyRight.isDown()) strafe -= 1.0f;
+
             if (forward == 0.0f && strafe == 0.0f) return;
 
             Vec3 dir = inputDirection(forward, strafe);
