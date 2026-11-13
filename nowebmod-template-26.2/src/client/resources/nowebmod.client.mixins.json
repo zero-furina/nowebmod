@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "com.example.noweb.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": [
+    "NoWebMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
